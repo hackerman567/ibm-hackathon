@@ -1,0 +1,26 @@
+{
+  "name": "signify-ai",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
+    "build": "npm run build --workspace=client",
+    "vercel-build": "cd client && npm install && npm run build",
+    "start": "npm run start --workspace=server",
+    "test": "npx playwright test",
+    "test:smoke": "npx playwright test tests/smoke.spec.js",
+    "test:ui": "npx playwright test tests/ui.spec.js",
+    "test:regression": "npx playwright test tests/regression.spec.js",
+    "test:report": "npx playwright show-report"
+  },
+  "dependencies": {
+    "groq-sdk": "^0.3.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "concurrently": "^8.2.0"
+  }
+}

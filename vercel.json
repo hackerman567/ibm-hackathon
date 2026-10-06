@@ -1,0 +1,13 @@
+{
+  "buildCommand": "cd client && npm install && npm run build",
+  "outputDirectory": "client/dist",
+  "framework": null,
+  "installCommand": "npm install",
+  "rewrites": [
+    { "source": "/api/health", "destination": "/api/health" },
+    { "source": "/api/groq/:path*", "destination": "/api/groq/:path*" },
+    { "source": "/api/sessions/:path*", "destination": "/api/sessions/:path*" },
+    { "source": "/api/addons/:path*", "destination": "/api/addons" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}

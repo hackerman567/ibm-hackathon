@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Elevation Ramp */
+  --bg-base: #0A0A0B;
+  --bg-raised: #111113;
+  --bg-overlay: #17171A;
+  --bg-hover: #1D1D21;
+  --bg-surface: #111113;
+  --bg-elevated: #17171A;
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.10);
+
+  /* Primary Accent: Crimson */
+  --accent: #FF4D4D;
+  --accent-hover: #FF6B6B;
+  --accent-dim: rgba(255, 77, 77, 0.12);
+  --accent-glow: rgba(255, 77, 77, 0.35);
+
+  /* Secondary Accent: Cool Teal (Semantic / Live / Success) */
+  --accent-teal: #4DD4C0;
+  --accent-teal-dim: rgba(77, 212, 192, 0.12);
+
+  /* Text Ramp */
+  --text-primary: #F5F3EF;
+  --text-secondary: rgba(245, 243, 239, 0.62);
+  --text-tertiary: rgba(245, 243, 239, 0.38);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: 'Inter', 'Geist', sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* ===== LIGHT THEME OVERRIDES ===== */
+  html.light body {
+    --bg-base: #F4F4F6;
+    --bg-raised: #FFFFFF;
+    --bg-overlay: #ECECF1;
+    --bg-hover: #E4E4E9;
+    --border-subtle: rgba(0, 0, 0, 0.08);
+    --border-default: rgba(0, 0, 0, 0.14);
+    --text-primary: #12121A;
+    --text-secondary: rgba(18, 18, 26, 0.65);
+    --text-tertiary: rgba(18, 18, 26, 0.42);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+  }
+
+  /* ===== HIGH CONTRAST ACCESSIBILITY MODE ===== */
+  html.high-contrast body {
+    --bg-base: #000000;
+    --bg-raised: #050508;
+    --bg-overlay: #121218;
+    --border-subtle: #666666;
+    --border-default: #888888;
+    --text-primary: #FFFFFF;
+    --text-secondary: #E0E0E0;
+    --text-tertiary: #CCCCCC;
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  /* Focus ring for accessibility */
+  *:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background-color: var(--accent-dim);
+    color: var(--text-primary);
+  }
+}
+
+/* Custom 8px scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-default);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* 2% Noise overlay filter across app */
+.noise-overlay {
+  position: relative;
+}
+
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Dark quiet luxury cards with top inner highlight */
+.glass-panel, .ui-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-hover {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-default);
+}
+
+/* JetBrains Mono Eyebrow Labels */
+.eyebrow-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* Dot grid background pattern */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Hero Title Shimmer Text */
+.shimmer-text {
+  background: linear-gradient(90deg, #FF4D4D 0%, #FF6B6B 25%, #4DD4C0 50%, #FF4D4D 75%, #FF6B6B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Waveform equalizers */
+.bar-equalizer {
+  display: flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 14px;
+}
+
+.bar-equalizer span {
+  width: 2.5px;
+  background-color: var(--accent-teal);
+  border-radius: 2px;
+  animation: equalizer 1.2s ease-in-out infinite alternate;
+}
+
+.bar-equalizer span:nth-child(1) { height: 40%; animation-delay: 0.1s; }
+.bar-equalizer span:nth-child(2) { height: 100%; animation-delay: 0.3s; }
+.bar-equalizer span:nth-child(3) { height: 60%; animation-delay: 0.2s; }
+.bar-equalizer span:nth-child(4) { height: 80%; animation-delay: 0.4s; }
+
+@keyframes equalizer {
+  0% { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
+}
+
+/* Infinite marquee ticker animation for tech integrations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

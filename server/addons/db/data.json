@@ -1,0 +1,246 @@
+{
+  "users": [
+    {
+      "id": "usr_1789898430698_j6kc1",
+      "aliases": [],
+      "createdAt": "2026-09-20T10:00:30.698Z",
+      "name": "user1",
+      "email": "juvenforuse@gmail.com",
+      "passwordHash": "$2b$10$xzLYhePfe6xnORr8n./0TeceSZ1GD39lFYuB4Aew76TM6D2B54NGi",
+      "role": "student"
+    },
+    {
+      "id": "usr_1789916907333_ffilm",
+      "aliases": [
+        "user2"
+      ],
+      "createdAt": "2026-09-20T15:08:27.333Z",
+      "name": "teacher",
+      "email": "teacher@gmail.com",
+      "passwordHash": "$2b$10$hVknvZgqgNAWU1.q6YPM2.NV.ZAN61iQl8yi0PiVrCqvUXvdyXLO.",
+      "role": "student"
+    },
+    {
+      "id": "usr_1789916931867_3fhkc",
+      "aliases": [
+        "user2"
+      ],
+      "createdAt": "2026-09-20T15:08:51.867Z",
+      "name": "teacher1",
+      "email": "teacher1@gmail.com",
+      "passwordHash": "$2b$10$lN6Xr1Z.yeuz2AH/89eu3ucXd98ijrGjOpT1zjHHr4HL8yCAAbrFe",
+      "role": "teacher"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "sess_1789898448120_agu0b",
+      "teacherId": "guest",
+      "joinCode": "2TDC46",
+      "status": "ended",
+      "startedAt": "2026-09-20T10:00:48.120Z",
+      "endedAt": "2026-09-20T10:01:29.275Z"
+    },
+    {
+      "id": "sess_1789898664725_hi0d4",
+      "teacherId": "guest",
+      "joinCode": "YEN5V2",
+      "status": "active",
+      "startedAt": "2026-09-20T10:04:24.725Z",
+      "endedAt": null
+    },
+    {
+      "id": "sess_1789898678848_1li7g",
+      "teacherId": "guest",
+      "joinCode": "ZEF8BC",
+      "status": "active",
+      "startedAt": "2026-09-20T10:04:38.848Z",
+      "endedAt": null
+    },
+    {
+      "id": "sess_1789899130035_fo1b7",
+      "teacherId": "guest",
+      "joinCode": "GJGY6F",
+      "status": "active",
+      "startedAt": "2026-09-20T10:12:10.035Z",
+      "endedAt": null
+    },
+    {
+      "id": "sess_1789906571412_95fwn",
+      "teacherId": "guest",
+      "joinCode": "KUNJTJ",
+      "status": "active",
+      "startedAt": "2026-09-20T12:16:11.412Z",
+      "endedAt": null
+    },
+    {
+      "id": "sess_1789916948495_mc0az",
+      "teacherId": "usr_1789916931867_3fhkc",
+      "joinCode": "KSYDKR",
+      "status": "active",
+      "startedAt": "2026-09-20T15:09:08.495Z",
+      "endedAt": null
+    },
+    {
+      "id": "sess_1789918613722_8nslb",
+      "teacherId": "usr_1789916931867_3fhkc",
+      "joinCode": "KBU53E",
+      "status": "active",
+      "startedAt": "2026-09-20T15:36:53.722Z",
+      "endedAt": null
+    }
+  ],
+  "session_members": [
+    {
+      "id": "sm_1789906601346_508h8",
+      "sessionId": "sess_1789906571412_95fwn",
+      "studentId": "guest_std_jmgfzm",
+      "joinedAt": "2026-09-20T12:16:41.346Z"
+    },
+    {
+      "id": "sm_1789915961527_ay5ok",
+      "sessionId": "sess_1789906571412_95fwn",
+      "studentId": "guest_std_inw6s7",
+      "joinedAt": "2026-09-20T14:52:41.527Z"
+    },
+    {
+      "id": "sm_1789916960158_fe43w",
+      "sessionId": "sess_1789916948495_mc0az",
+      "studentId": "usr_1789898430698_j6kc1",
+      "joinedAt": "2026-09-20T15:09:20.158Z"
+    }
+  ],
+  "tags": [
+    {
+      "id": "tag_1789977594775_eum10",
+      "confidence": 0.8,
+      "createdAt": "2026-09-21T07:59:54.774Z",
+      "sessionId": "4df46e8a-45d2-44cb-a043-f5635fbbdd73",
+      "segmentId": "seg_1789977594602",
+      "type": "QUESTION",
+      "source": "rules",
+      "label": "Question asked",
+      "text": "When you want to store information that changes over the course of a session, you use the useState hook."
+    },
+    {
+      "id": "tag_1789977602236_y7alp",
+      "confidence": 0.88,
+      "createdAt": "2026-09-21T08:00:02.236Z",
+      "sessionId": "4df46e8a-45d2-44cb-a043-f5635fbbdd73",
+      "segmentId": "seg_1789977602159",
+      "type": "EMPHASIS",
+      "source": "rules",
+      "label": "Teacher emphasis phrase",
+      "text": "Let's make sure our application respects keyboard focus and is compatible with screen readers."
+    }
+  ],
+  "alerts": [
+    {
+      "id": "alt_1789898452347_uxcv4",
+      "createdAt": "2026-09-20T10:00:52.347Z",
+      "acknowledgedBy": [
+        "guest"
+      ],
+      "sessionId": "sess_1789898448120_agu0b",
+      "type": "NEW_TOPIC",
+      "targetStudentId": null,
+      "message": "Teacher introduced a new topic",
+      "source": "teacher",
+      "vibrationPattern": [
+        150
+      ]
+    },
+    {
+      "id": "alt_1789898460849_ymyd5",
+      "createdAt": "2026-09-20T10:01:00.849Z",
+      "acknowledgedBy": [],
+      "sessionId": "sess_1789898448120_agu0b",
+      "type": "NEW_TOPIC",
+      "targetStudentId": null,
+      "message": "Teacher introduced a new topic",
+      "source": "teacher",
+      "vibrationPattern": [
+        150
+      ]
+    },
+    {
+      "id": "alt_1789898481676_byk6n",
+      "createdAt": "2026-09-20T10:01:21.676Z",
+      "acknowledgedBy": [
+        "guest"
+      ],
+      "sessionId": "sess_1789898448120_agu0b",
+      "type": "EMERGENCY",
+      "targetStudentId": null,
+      "message": "CRITICAL EMERGENCY: EVACUATE / LISTEN TO INSTRUCTOR",
+      "source": "teacher",
+      "vibrationPattern": [
+        500,
+        200,
+        500,
+        200,
+        500
+      ]
+    },
+    {
+      "id": "alt_1789898680877_lh7x2",
+      "createdAt": "2026-09-20T10:04:40.877Z",
+      "acknowledgedBy": [
+        "guest"
+      ],
+      "sessionId": "sess_1789898678848_1li7g",
+      "type": "NEW_TOPIC",
+      "targetStudentId": null,
+      "message": "Teacher introduced a new topic",
+      "source": "teacher",
+      "vibrationPattern": [
+        150
+      ]
+    },
+    {
+      "id": "alt_1789898884741_ew924",
+      "createdAt": "2026-09-20T10:08:04.741Z",
+      "acknowledgedBy": [
+        "guest"
+      ],
+      "sessionId": "sess_1789898678848_1li7g",
+      "type": "NEW_TOPIC",
+      "targetStudentId": null,
+      "message": "Teacher introduced a new topic",
+      "source": "teacher",
+      "vibrationPattern": [
+        150
+      ]
+    },
+    {
+      "id": "alt_1789898960351_eqetl",
+      "createdAt": "2026-09-20T10:09:20.351Z",
+      "acknowledgedBy": [
+        "guest"
+      ],
+      "sessionId": "sess_1789898678848_1li7g",
+      "type": "NEW_TOPIC",
+      "targetStudentId": null,
+      "message": "Teacher introduced a new topic",
+      "source": "teacher",
+      "vibrationPattern": [
+        150
+      ]
+    },
+    {
+      "id": "alt_1789898980242_pg42l",
+      "createdAt": "2026-09-20T10:09:40.242Z",
+      "acknowledgedBy": [
+        "guest"
+      ],
+      "sessionId": "sess_1789898678848_1li7g",
+      "type": "NEW_TOPIC",
+      "targetStudentId": null,
+      "message": "Teacher introduced a new topic",
+      "source": "teacher",
+      "vibrationPattern": [
+        150
+      ]
+    }
+  ]
+}
